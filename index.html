@@ -12,7 +12,7 @@
   <h3>Panel 2: Power = <span id="pwr_1_2"></span> W</h3>
 
   <script type="text/javascript" language="javascript">
-    var client = new Paho.MQTT.Client("broker.hivemq.com", 8883, "bhfcbdscvd")
+    var client = new Paho.MQTT.Client("broker.emqx.io", 8084, "bhfcbdscvd")
 
     function onConnect() {
       console.log("connected")
