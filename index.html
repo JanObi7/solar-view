@@ -3,18 +3,270 @@
 <head>
   <meta charset="utf-8">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/paho-mqtt/1.0.1/mqttws31.min.js" type="text/javascript"></script>
-  <title>Solar View</title>
+  <link rel="stylesheet" href="style.css">
   <link rel="icon" type="image/x-icon" href="favicon.png">
+  <title>Solar View</title>
 </head>
 <body>
-  <h1>Total: Power = <span id="pwr_t"></span> W</h1>
-  <h2>WR 01: Power = <span id="pwr_1"></span> W</h2>
-  <h3>Panel 1: Power = <span id="pwr_1_1"></span> W</h3>
-  <h3>Panel 2: Power = <span id="pwr_1_2"></span> W</h3>
+
+
+  
+
+<h1 class="header">Total Power = <span id="pwr_t"></span> W</h1>
+
+<div class="container">
+  <div class="panel">
+    <img src="Panel.png" alt="Bildbeschreibung">
+    <div class="statpanel1_1" id="statpanel1_1"></div>
+    <div class="text"><h3>Panel 1:<br><span id="pwr_1_1"></span></h3></div>
+  </div>
+  <div class="panel">
+    <img src="Panel.png" alt="Bildbeschreibung">
+    <div class="statpanel1_1" id="statpanel2_1"></div>
+    <div class="text"><h3>Panel 2:<br><span id="pwr_2_1"></span></h3></div>
+  </div>
+  <div class="panel">
+    <img src="Panel.png" alt="Bildbeschreibung">
+    <div class="statpanel1_1" id="statpanel3_1"></div>
+    <div class="text"><h3>Panel 3:<br><span id="pwr_3_1"></span></h3></div>
+  </div>
+  <div class="panel">
+    <img src="Panel.png" alt="Bildbeschreibung">
+    <div class="statpanel1_1" id="statpanel4_1"></div>
+    <div class="text"><h3>Panel 4:<br><span id="pwr_4_1"></span></h3></div>
+  </div>
+  <div class="panel">
+    <img src="Panel.png" alt="Bildbeschreibung">
+    <div class="statpanel1_1" id="statpanel5_1"></div>
+    <div class="text"><h3>Panel 5:<br><span id="pwr_5_1"></span></h3></div>
+  </div>
+  <div class="panel">
+    <img src="Panel.png" alt="Bildbeschreibung">
+    <div class="statpanel1_1" id="statpanel6_1"></div>
+    <div class="text"><h3>Panel 6:<br><span id="pwr_6_1"></span></h3></div>
+  </div>
+</div>
+<div class="container">
+  <div class="conv">
+    <img src="WR.png" alt="Bildbeschreibung">
+    <div class="statWR_1" id="statWR_1"></div>
+    <div class="text-conv"><h3>WR 1:<br><span id="pwr_1"></span></h3></div>
+  </div>
+  <div class="conv">
+    <img src="WR.png" alt="Bildbeschreibung">
+    <div class="statWR_2" id="statWR_2"></div>
+    <div class="text-conv"><h3>WR 2:<br><span id="pwr_2"></span></h3></div>
+  </div>
+  <div class="conv">
+    <img src="WR.png" alt="Bildbeschreibung">
+    <div class="statWR_3" id="statWR_3"></div>
+    <div class="text-conv"><h3>WR 3:<br><span id="pwr_3"></span></h3></div>
+  </div>
+  <div class="conv">
+    <img src="WR.png" alt="Bildbeschreibung">
+    <div class="statWR_4" id="statWR_4"></div>
+    <div class="text-conv"><h3>WR 4:<br><span id="pwr_4"></span></h3></div>
+  </div>
+  <div class="conv">
+    <img src="WR.png" alt="Bildbeschreibung">
+    <div class="statWR_5" id="statWR_5"></div>
+    <div class="text-conv"><h3>WR 5:<br><span id="pwr_5"></span></h3></div>
+  </div>
+  <div class="conv">
+    <img src="WR.png" alt="Bildbeschreibung">
+    <div class="statWR_6" id="statWR_6"></div>
+    <div class="text-conv"><h3>WR 6:<br><span id="pwr_6"></span></h3></div>
+  </div>
+</div>
+<div class="container">
+  <div class="panel">
+    <img src="Panel.png" alt="Bildbeschreibung">
+    <div class="statpanel1_1" id="statpanel1_2"></div>
+    <div class="text"><h3>Panel 7:<br><span id="pwr_1_2"></span></h3></div>
+  </div>
+  <div class="panel">
+    <img src="Panel.png" alt="Bildbeschreibung">
+    <div class="statpanel1_1" id="statpanel2_2"></div>
+    <div class="text"><h3>Panel 8:<br><span id="pwr_2_2"></span></h3></div>
+  </div>
+  <div class="panel">
+    <img src="Panel.png" alt="Bildbeschreibung">
+    <div class="statpanel1_1" id="statpanel3_2"></div>
+    <div class="text"><h3>Panel 9:<br><span id="pwr_3_2"></span></h3></div>
+  </div>
+  <div class="panel">
+    <img src="Panel.png" alt="Bildbeschreibung">
+    <div class="statpanel1_1" id="statpanel4_2"></div>
+    <div class="text"><h3>Panel 10:<br><span id="pwr_4_2"></span></h3></div>
+  </div>
+  <div class="panel">
+    <img src="Panel.png" alt="Bildbeschreibung">
+    <div class="statpanel1_1" id="statpanel5_2"></div>
+    <div class="text"><h3>Panel 11:<br><span id="pwr_5_2"></span></h3></div>
+  </div>
+  <div class="panel">
+    <img src="Panel.png" alt="Bildbeschreibung">
+    <div class="statpanel1_1" id="statpanel6_2"></div>
+    <div class="text"><h3>Panel 12:<br><span id="pwr_6_2"></span></h3></div>
+  </div>
+</div>
+<div class="table-container">
+<table>
+  <thead>
+    <tr>
+      <th>Solarpanel</th>
+      <th>Leistung</th>
+      <th>Spannung</th>
+      <th>Strom</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Panel 1</td>
+      <td><span id="pwrtab_1_1"></span> W</td>
+      <td><span id="voltab_1_1"></span> V</td>
+      <td><span id="curtab_1_1"></span> A</td>
+    </tr>
+    <tr>
+      <td>Panel 2</td>
+      <td><span id="pwrtab_2_1"></span> W</td>
+      <td><span id="voltab_2_1"></span> V</td>
+      <td><span id="curtab_2_1"></span> A</td>
+    </tr>
+    <tr>
+      <td>Panel 3</td>
+      <td><span id="pwrtab_3_1"></span> W</td>
+      <td><span id="voltab_3_1"></span> V</td>
+      <td><span id="curtab_3_1"></span> A</td>
+    </tr>
+    <tr>
+      <td>Panel 4</td>
+      <td><span id="pwrtab_4_1"></span> W</td>
+      <td><span id="voltab_4_1"></span> V</td>
+      <td><span id="curtab_4_1"></span> A</td>
+    </tr>
+    <tr>
+      <td>Panel 5</td>
+      <td><span id="pwrtab_5_1"></span> W</td>
+      <td><span id="voltab_5_1"></span> V</td>
+      <td><span id="curtab_5_1"></span> A</td>
+    </tr>
+    <tr>
+      <td>Panel 6</td>
+      <td><span id="pwrtab_6_1"></span> W</td>
+      <td><span id="voltab_6_1"></span> V</td>
+      <td><span id="curtab_6_1"></span> A</td>
+    </tr>
+    <tr>
+      <td>Panel 7</td>
+      <td><span id="pwrtab_1_2"></span> W</td>
+      <td><span id="voltab_1_2"></span> V</td>
+      <td><span id="curtab_1_2"></span> A</td>
+    </tr>
+    <tr>
+      <td>Panel 8</td>
+      <td><span id="pwrtab_2_2"></span> W</td>
+      <td><span id="voltab_2_2"></span> V</td>
+      <td><span id="curtab_2_2"></span> A</td>
+    </tr>
+    <tr>
+      <td>Panel 9</td>
+      <td><span id="pwrtab_3_2"></span> W</td>
+      <td><span id="voltab_3_2"></span> V</td>
+      <td><span id="curtab_3_2"></span> A</td>
+    </tr>
+    <tr>
+      <td>Panel 10</td>
+      <td><span id="pwrtab_4_2"></span> W</td>
+      <td><span id="voltab_4_2"></span> V</td>
+      <td><span id="curtab_4_2"></span> A</td>
+    </tr>
+    <tr>
+      <td>Panel 11</td>
+      <td><span id="pwrtab_5_2"></span> W</td>
+      <td><span id="voltab_5_2"></span> V</td>
+      <td><span id="curtab_5_2"></span> A</td>
+    </tr>
+    <tr>
+      <td>Panel 12</td>
+      <td><span id="pwrtab_6_2"></span> W</td>
+      <td><span id="voltab_6_2"></span> V</td>
+      <td><span id="curtab_6_2"></span> A</td>
+    </tr>
+  </tbody>
+</table> 
+<table>
+  <thead>
+    <tr>
+      <th>Wechselrichter</th>
+      <th>Leistung</th>
+      <th>Spannung</th>
+      <th>Strom</th>
+      <th>DC-Leistung </th>
+      <th>Temperatur</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>WR 1</td>
+      <td><span id="pwrtab_1"></span> W</td>
+      <td><span id="voltab_1"></span> V</td>
+      <td><span id="curtab_1"></span> A</td>
+      <td><span id="pwrdctab_1"></span> W</td>
+      <td><span id="temtab_1"></span>°C</td>
+    </tr>
+    <tr>
+      <td>WR 2</td>
+      <td><span id="pwrtab_2"></span> W</td>
+      <td><span id="voltab_2"></span> V</td>
+      <td><span id="curtab_2"></span> A</td>
+      <td><span id="pwrdctab_2"></span> W</td>
+      <td><span id="temtab_2"></span>°C</td>
+    </tr>
+    <tr>
+      <td>WR 3</td>
+      <td><span id="pwrtab_3"></span> W</td>
+      <td><span id="voltab_3"></span> V</td>
+      <td><span id="curtab_3"></span> A</td>
+      <td><span id="pwrdctab_3"></span> W</td>
+      <td><span id="temtab_3"></span>°C</td>
+    </tr>
+    <tr>
+      <td>WR 4</td>
+      <td><span id="pwrtab_4"></span> W</td>
+      <td><span id="voltab_4"></span> V</td>
+      <td><span id="curtab_4"></span> A</td>
+      <td><span id="pwrdctab_4"></span> W</td>
+      <td><span id="temtab_4"></span>°C</td>
+    </tr>
+    <tr>
+      <td>WR 5</td>
+      <td><span id="pwrtab_5"></span> W</td>
+      <td><span id="voltab_5"></span> V</td>
+      <td><span id="curtab_5"></span> A</td>
+      <td><span id="pwrdctab_5"></span> W</td>
+      <td><span id="temtab_5"></span>°C</td>
+    </tr>
+    <tr>
+      <td>WR 6</td>
+      <td><span id="pwrtab_6"></span> W</td>
+      <td><span id="voltab_6"></span> V</td>
+      <td><span id="curtab_6"></span> A</td>
+      <td><span id="pwrdctab_6"></span> W</td>
+      <td><span id="temtab_6"></span>°C</td>
+    </tr>
+  </tbody>
+</table> 
+</div>
+
+<div class="footer">
+  <p>Website von Robert Obermüller</p>
+</div>
 
   <script type="text/javascript" language="javascript">
-    var client = new Paho.MQTT.Client("test.mosquitto.org", 8081, "bhfcbdscvd")
-
+  
+  var client = new Paho.MQTT.Client("test.mosquitto.org", 8081, "bhfcbdscvd")
+  
     function onConnect() {
       console.log("connected")
 
@@ -26,17 +278,140 @@
       el.innerHTML = value
     }
 
+    
+
     function msgArrived(msg) {
-      var topic = msg.destinationName
-      var value = msg.payloadString
-
-      // console.log(topic,"=",value)
-
+      var topic = msg.destinationName;
+      var value = parseFloat(msg.payloadString);
+      
       if (topic == "OpenDTU-A60F1C/ac/power") document.querySelector("#pwr_t").innerHTML = value
-      if (topic == "OpenDTU-A60F1C/114182939493/0/power") document.querySelector("#pwr_1").innerHTML = value
-      if (topic == "OpenDTU-A60F1C/114182939493/1/power") document.querySelector("#pwr_1_1").innerHTML = value
-      if (topic == "OpenDTU-A60F1C/114182939493/2/power") document.querySelector("#pwr_1_2").innerHTML = value
+      if (topic == "OpenDTU-A60F1C/114182939493/0/power") {updatePercentageWR("pwr_1", value);}
+      if (topic == "OpenDTU-A60F1C/114182939493/1/power") {updatePercentagePanel("pwr_1_1", value);}
+      if (topic == "OpenDTU-A60F1C/114182939493/2/power") {updatePercentagePanel("pwr_1_2", value);}
+
+      if (topic == "OpenDTU-A60F1C/114182936283/0/power") {updatePercentageWR("pwr_2", value);}
+      if (topic == "OpenDTU-A60F1C/114182936283/1/power") {updatePercentagePanel("pwr_2_1", value);}
+      if (topic == "OpenDTU-A60F1C/114182936283/2/power") {updatePercentagePanel("pwr_2_2", value);}
+      
+      if (topic == "OpenDTU-A60F1C/114182937394/0/power") {updatePercentageWR("pwr_3", value);}
+      if (topic == "OpenDTU-A60F1C/114182937394/1/power") {updatePercentagePanel("pwr_3_1", value);}
+      if (topic == "OpenDTU-A60F1C/114182937394/2/power") {updatePercentagePanel("pwr_3_2", value);}
+
+      if (topic == "OpenDTU-A60F1C/114183088058/0/power") {updatePercentageWR("pwr_4", value);}
+      if (topic == "OpenDTU-A60F1C/114183088058/1/power") {updatePercentagePanel("pwr_4_1", value);}
+      if (topic == "OpenDTU-A60F1C/114183088058/2/power") {updatePercentagePanel("pwr_4_2", value);}
+
+      if (topic == "OpenDTU-A60F1C/114182940452/0/power") {updatePercentageWR("pwr_5", value);}
+      if (topic == "OpenDTU-A60F1C/114182940452/1/power") {updatePercentagePanel("pwr_5_1", value);}
+      if (topic == "OpenDTU-A60F1C/114182940452/2/power") {updatePercentagePanel("pwr_5_2", value);}
+
+      if (topic == "OpenDTU-A60F1C/114182939157/0/power") {updatePercentageWR("pwr_6", value);}
+      if (topic == "OpenDTU-A60F1C/114182939157/1/power") {updatePercentagePanel("pwr_6_1", value);}
+      if (topic == "OpenDTU-A60F1C/114182939157/2/power") {updatePercentagePanel("pwr_6_2", value);}
+      
+      if (topic == "OpenDTU-A60F1C/114182939493/0/power") document.querySelectorAll("#pwrtab_1").forEach(elem => {elem.innerHTML=value})
+      if (topic == "OpenDTU-A60F1C/114182939493/0/powerdc") document.querySelectorAll("#pwrdctab_1").forEach(elem => {elem.innerHTML=value})
+      if (topic == "OpenDTU-A60F1C/114182939493/1/power") document.querySelectorAll("#pwrtab_1_1").forEach(elem => {elem.innerHTML=value})
+      if (topic == "OpenDTU-A60F1C/114182939493/2/power") document.querySelectorAll("#pwrtab_1_2").forEach(elem => {elem.innerHTML=value})
+
+      if (topic == "OpenDTU-A60F1C/114182936283/0/power") document.querySelectorAll("#pwrtab_2").forEach(elem => {elem.innerHTML=value})
+      if (topic == "OpenDTU-A60F1C/114182936283/0/powerdc") document.querySelectorAll("#pwrdctab_2").forEach(elem => {elem.innerHTML=value})
+      if (topic == "OpenDTU-A60F1C/114182936283/1/power") document.querySelectorAll("#pwrtab_2_1").forEach(elem => {elem.innerHTML=value})
+      if (topic == "OpenDTU-A60F1C/114182936283/2/power") document.querySelectorAll("#pwrtab_2_2").forEach(elem => {elem.innerHTML=value})
+      
+      if (topic == "OpenDTU-A60F1C/114182937394/0/power") document.querySelectorAll("#pwrtab_3").forEach(elem => {elem.innerHTML=value})
+      if (topic == "OpenDTU-A60F1C/114182937394/0/powerdc") document.querySelectorAll("#pwrdctab_3").forEach(elem => {elem.innerHTML=value})
+      if (topic == "OpenDTU-A60F1C/114182937394/1/power") document.querySelectorAll("#pwrtab_3_1").forEach(elem => {elem.innerHTML=value})
+      if (topic == "OpenDTU-A60F1C/114182937394/2/power") document.querySelectorAll("#pwrtab_3_2").forEach(elem => {elem.innerHTML=value})
+
+      if (topic == "OpenDTU-A60F1C/114183088058/0/power") document.querySelectorAll("#pwrtab_4").forEach(elem => {elem.innerHTML=value})
+      if (topic == "OpenDTU-A60F1C/114183088058/0/powerdc") document.querySelectorAll("#pwrdctab_4").forEach(elem => {elem.innerHTML=value})
+      if (topic == "OpenDTU-A60F1C/114183088058/1/power") document.querySelectorAll("#pwrtab_4_1").forEach(elem => {elem.innerHTML=value})
+      if (topic == "OpenDTU-A60F1C/114183088058/2/power") document.querySelectorAll("#pwrtab_4_2").forEach(elem => {elem.innerHTML=value})
+
+      if (topic == "OpenDTU-A60F1C/114182940452/0/power") document.querySelectorAll("#pwrtab_5").forEach(elem => {elem.innerHTML=value})
+      if (topic == "OpenDTU-A60F1C/114182940452/0/powerdc") document.querySelectorAll("#pwrdctab_5").forEach(elem => {elem.innerHTML=value})
+      if (topic == "OpenDTU-A60F1C/114182940452/1/power") document.querySelectorAll("#pwrtab_5_1").forEach(elem => {elem.innerHTML=value})
+      if (topic == "OpenDTU-A60F1C/114182940452/2/power") document.querySelectorAll("#pwrtab_5_2").forEach(elem => {elem.innerHTML=value})
+
+      if (topic == "OpenDTU-A60F1C/114182939157/0/power") document.querySelectorAll("#pwrtab_6").forEach(elem => {elem.innerHTML=value})
+      if (topic == "OpenDTU-A60F1C/114182939157/0/powerdc") document.querySelectorAll("#pwrdctab_6").forEach(elem => {elem.innerHTML=value})
+      if (topic == "OpenDTU-A60F1C/114182939157/1/power") document.querySelectorAll("#pwrtab_6_1").forEach(elem => {elem.innerHTML=value})
+      if (topic == "OpenDTU-A60F1C/114182939157/2/power") document.querySelectorAll("#pwrtab_6_2").forEach(elem => {elem.innerHTML=value})
+    
+      if (topic == "OpenDTU-A60F1C/114182939493/0/voltage") document.querySelectorAll("#voltab_1").forEach(elem => {elem.innerHTML=value})
+      if (topic == "OpenDTU-A60F1C/114182939493/1/voltage") document.querySelectorAll("#voltab_1_1").forEach(elem => {elem.innerHTML=value})
+      if (topic == "OpenDTU-A60F1C/114182939493/2/voltage") document.querySelectorAll("#voltab_1_2").forEach(elem => {elem.innerHTML=value})
+
+      if (topic == "OpenDTU-A60F1C/114182936283/0/voltage") document.querySelectorAll("#voltab_2").forEach(elem => {elem.innerHTML=value})
+      if (topic == "OpenDTU-A60F1C/114182936283/1/voltage") document.querySelectorAll("#voltab_2_1").forEach(elem => {elem.innerHTML=value})
+      if (topic == "OpenDTU-A60F1C/114182936283/2/voltage") document.querySelectorAll("#voltab_2_2").forEach(elem => {elem.innerHTML=value})
+      
+      if (topic == "OpenDTU-A60F1C/114182937394/0/voltage") document.querySelectorAll("#voltab_3").forEach(elem => {elem.innerHTML=value})
+      if (topic == "OpenDTU-A60F1C/114182937394/1/voltage") document.querySelectorAll("#voltab_3_1").forEach(elem => {elem.innerHTML=value})
+      if (topic == "OpenDTU-A60F1C/114182937394/2/voltage") document.querySelectorAll("#voltab_3_2").forEach(elem => {elem.innerHTML=value})
+
+      if (topic == "OpenDTU-A60F1C/114183088058/0/voltage") document.querySelectorAll("#voltab_4").forEach(elem => {elem.innerHTML=value})
+      if (topic == "OpenDTU-A60F1C/114183088058/1/voltage") document.querySelectorAll("#voltab_4_1").forEach(elem => {elem.innerHTML=value})
+      if (topic == "OpenDTU-A60F1C/114183088058/2/voltage") document.querySelectorAll("#voltab_4_2").forEach(elem => {elem.innerHTML=value})
+
+      if (topic == "OpenDTU-A60F1C/114182940452/0/voltage") document.querySelectorAll("#voltab_5").forEach(elem => {elem.innerHTML=value})
+      if (topic == "OpenDTU-A60F1C/114182940452/1/voltage") document.querySelectorAll("#voltab_5_1").forEach(elem => {elem.innerHTML=value})
+      if (topic == "OpenDTU-A60F1C/114182940452/2/voltage") document.querySelectorAll("#voltab_5_2").forEach(elem => {elem.innerHTML=value})
+
+      if (topic == "OpenDTU-A60F1C/114182939157/0/voltage") document.querySelectorAll("#voltab_6").forEach(elem => {elem.innerHTML=value})
+      if (topic == "OpenDTU-A60F1C/114182939157/1/voltage") document.querySelectorAll("#voltab_6_1").forEach(elem => {elem.innerHTML=value})
+      if (topic == "OpenDTU-A60F1C/114182939493/2/voltage") document.querySelectorAll("#voltab_6_2").forEach(elem => {elem.innerHTML=value})
+
+      if (topic == "OpenDTU-A60F1C/114182939493/0/current") document.querySelectorAll("#curtab_1").forEach(elem => {elem.innerHTML=value})
+      if (topic == "OpenDTU-A60F1C/114182939493/1/current") document.querySelectorAll("#curtab_1_1").forEach(elem => {elem.innerHTML=value})
+      if (topic == "OpenDTU-A60F1C/114182939493/2/current") document.querySelectorAll("#curtab_1_2").forEach(elem => {elem.innerHTML=value})
+
+      if (topic == "OpenDTU-A60F1C/114182936283/0/current") document.querySelectorAll("#curtab_2").forEach(elem => {elem.innerHTML=value})
+      if (topic == "OpenDTU-A60F1C/114182936283/1/current") document.querySelectorAll("#curtab_2_1").forEach(elem => {elem.innerHTML=value})
+      if (topic == "OpenDTU-A60F1C/114182936283/2/current") document.querySelectorAll("#curtab_2_2").forEach(elem => {elem.innerHTML=value})
+      
+      if (topic == "OpenDTU-A60F1C/114182937394/0/current") document.querySelectorAll("#curtab_3").forEach(elem => {elem.innerHTML=value})
+      if (topic == "OpenDTU-A60F1C/114182937394/1/current") document.querySelectorAll("#curtab_3_1").forEach(elem => {elem.innerHTML=value})
+      if (topic == "OpenDTU-A60F1C/114182937394/2/current") document.querySelectorAll("#curtab_3_2").forEach(elem => {elem.innerHTML=value})
+
+      if (topic == "OpenDTU-A60F1C/114183088058/0/current") document.querySelectorAll("#curtab_4").forEach(elem => {elem.innerHTML=value})
+      if (topic == "OpenDTU-A60F1C/114183088058/1/current") document.querySelectorAll("#curtab_4_1").forEach(elem => {elem.innerHTML=value})
+      if (topic == "OpenDTU-A60F1C/114183088058/2/current") document.querySelectorAll("#curtab_4_2").forEach(elem => {elem.innerHTML=value})
+
+      if (topic == "OpenDTU-A60F1C/114182940452/0/current") document.querySelectorAll("#curtab_5").forEach(elem => {elem.innerHTML=value})
+      if (topic == "OpenDTU-A60F1C/114182940452/1/current") document.querySelectorAll("#curtab_5_1").forEach(elem => {elem.innerHTML=value})
+      if (topic == "OpenDTU-A60F1C/114182940452/2/current") document.querySelectorAll("#curtab_5_2").forEach(elem => {elem.innerHTML=value})
+
+      if (topic == "OpenDTU-A60F1C/114182939157/0/current") document.querySelectorAll("#curtab_6").forEach(elem => {elem.innerHTML=value})
+      if (topic == "OpenDTU-A60F1C/114182939157/1/current") document.querySelectorAll("#curtab_6_1").forEach(elem => {elem.innerHTML=value})
+      if (topic == "OpenDTU-A60F1C/114182939157/2/current") document.querySelectorAll("#curtab_6_2").forEach(elem => {elem.innerHTML=value})
+
+      if (topic == "OpenDTU-A60F1C/114182939493/0/temperature") document.querySelectorAll("#temtab_1").forEach(elem => {elem.innerHTML=value})
+      if (topic == "OpenDTU-A60F1C/114182939493/1/temperature") document.querySelectorAll("#temtab_1_1").forEach(elem => {elem.innerHTML=value})
+      if (topic == "OpenDTU-A60F1C/114182939493/2/temperature") document.querySelectorAll("#temtab_1_2").forEach(elem => {elem.innerHTML=value})
+
+      if (topic == "OpenDTU-A60F1C/114182936283/0/temperature") document.querySelectorAll("#temtab_2").forEach(elem => {elem.innerHTML=value})
+      if (topic == "OpenDTU-A60F1C/114182936283/1/temperature") document.querySelectorAll("#temtab_2_1").forEach(elem => {elem.innerHTML=value})
+      if (topic == "OpenDTU-A60F1C/114182936283/2/temperature") document.querySelectorAll("#temtab_2_2").forEach(elem => {elem.innerHTML=value})
+      
+      if (topic == "OpenDTU-A60F1C/114182937394/0/temperature") document.querySelectorAll("#temtab_3").forEach(elem => {elem.innerHTML=value})
+      if (topic == "OpenDTU-A60F1C/114182937394/1/temperature") document.querySelectorAll("#temtab_3_1").forEach(elem => {elem.innerHTML=value})
+      if (topic == "OpenDTU-A60F1C/114182937394/2/temperature") document.querySelectorAll("#temtab_3_2").forEach(elem => {elem.innerHTML=value})
+
+      if (topic == "OpenDTU-A60F1C/114183088058/0/temperature") document.querySelectorAll("#temtab_4").forEach(elem => {elem.innerHTML=value})
+      if (topic == "OpenDTU-A60F1C/114183088058/1/temperature") document.querySelectorAll("#temtab_4_1").forEach(elem => {elem.innerHTML=value})
+      if (topic == "OpenDTU-A60F1C/114183088058/2/temperature") document.querySelectorAll("#temtab_4_2").forEach(elem => {elem.innerHTML=value})
+
+      if (topic == "OpenDTU-A60F1C/114182940452/0/temperature") document.querySelectorAll("#temtab_5").forEach(elem => {elem.innerHTML=value})
+      if (topic == "OpenDTU-A60F1C/114182940452/1/temperature") document.querySelectorAll("#temtab_5_1").forEach(elem => {elem.innerHTML=value})
+      if (topic == "OpenDTU-A60F1C/114182940452/2/temperature") document.querySelectorAll("#temtab_5_2").forEach(elem => {elem.innerHTML=value})
+
+      if (topic == "OpenDTU-A60F1C/114182939157/0/temperature") document.querySelectorAll("#temtab_6").forEach(elem => {elem.innerHTML=value})
+      if (topic == "OpenDTU-A60F1C/114182939157/1/temperature") document.querySelectorAll("#temtab_6_1").forEach(elem => {elem.innerHTML=value})
+      if (topic == "OpenDTU-A60F1C/114182939157/2/temperature") document.querySelectorAll("#temtab_6_2").forEach(elem => {elem.innerHTML=value})
     }
+    
 
     client.onMessageArrived = msgArrived
 
@@ -45,6 +420,346 @@
       onSuccess: onConnect,
       useSSL: true,
     })
+
+function updatePercentagePanel(panelId, value) {
+      const maxPower = 410 ;
+      const percentage = (value / maxPower) * 100;
+      setText(panelId, `${percentage.toFixed(2)}%`);
+}
+function updatePercentageWR(panelId, value) {
+      const maxPower = 600;
+      const percentage = (value / maxPower) * 100;
+      setText(panelId, `${percentage.toFixed(2)}%`);
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+  setInterval(function () {
+    var spanElement = document.getElementById("pwr_1_1");
+    var numericValue = parseFloat(spanElement.innerText);
+    var dynamicHeightElement = document.getElementById("statpanel1_1");
+    dynamicHeightElement.style.height = numericValue +"%";
+    updateBackgroundColor(dynamicHeightElement);
+  }, 5);
+  function updateBackgroundColor(element) {
+    var heightPercentage = parseFloat(element.style.height);
+    var hue = (heightPercentage / 100) * 120; 
+    var saturation = 100;
+    var lightness = 50;
+    var opacity = 0.2 + (heightPercentage / 100) * 0.8;
+    var backgroundColor = "hsla(" + hue + ", " + saturation + "%, " + lightness + "%, " + opacity + ")";
+    element.style.backgroundColor = backgroundColor;
+  }
+});
+document.addEventListener("DOMContentLoaded", function () {
+  setInterval(function () {
+    var spanElement = document.getElementById("pwr_1_2");
+    var numericValue = parseFloat(spanElement.innerText);
+    var dynamicHeightElement = document.getElementById("statpanel1_2");
+    dynamicHeightElement.style.height = numericValue + "%";
+    updateBackgroundColor(dynamicHeightElement);
+  }, 5);
+  function updateBackgroundColor(element) {
+    var heightPercentage = parseFloat(element.style.height);
+    var hue = (heightPercentage / 100) * 120; 
+    var saturation = 100;
+    var lightness = 50;
+    var opacity = 0.2 + (heightPercentage / 100) * 0.8;
+    var backgroundColor = "hsla(" + hue + ", " + saturation + "%, " + lightness + "%, " + opacity + ")";
+    element.style.backgroundColor = backgroundColor;
+  }
+});
+document.addEventListener("DOMContentLoaded", function () {
+  setInterval(function () {
+    var spanElement = document.getElementById("pwr_2_1");
+    var numericValue = parseFloat(spanElement.innerText);
+    var dynamicHeightElement = document.getElementById("statpanel2_1");
+    dynamicHeightElement.style.height = numericValue + "%";
+    updateBackgroundColor(dynamicHeightElement);
+  }, 5);
+  function updateBackgroundColor(element) {
+    var heightPercentage = parseFloat(element.style.height);
+    var hue = (heightPercentage / 100) * 120; 
+    var saturation = 100;
+    var lightness = 50;
+    var opacity = 0.2 + (heightPercentage / 100) * 0.8;
+    var backgroundColor = "hsla(" + hue + ", " + saturation + "%, " + lightness + "%, " + opacity + ")";
+    element.style.backgroundColor = backgroundColor;
+  }
+});
+document.addEventListener("DOMContentLoaded", function () {
+  setInterval(function () {
+    var spanElement = document.getElementById("pwr_2_2");
+    var numericValue = parseFloat(spanElement.innerText);
+    var dynamicHeightElement = document.getElementById("statpanel2_2");
+    dynamicHeightElement.style.height = numericValue + "%";
+    updateBackgroundColor(dynamicHeightElement);
+  }, 5);
+  function updateBackgroundColor(element) {
+    var heightPercentage = parseFloat(element.style.height);
+    var hue = (heightPercentage / 100) * 120; 
+    var saturation = 100;
+    var lightness = 50;
+    var opacity = 0.2 + (heightPercentage / 100) * 0.8;
+    var backgroundColor = "hsla(" + hue + ", " + saturation + "%, " + lightness + "%, " + opacity + ")";
+    element.style.backgroundColor = backgroundColor;
+  }
+});
+document.addEventListener("DOMContentLoaded", function () {
+  setInterval(function () {
+    var spanElement = document.getElementById("pwr_3_1");
+    var numericValue = parseFloat(spanElement.innerText);
+    var dynamicHeightElement = document.getElementById("statpanel3_1");
+    dynamicHeightElement.style.height = numericValue + "%";
+    updateBackgroundColor(dynamicHeightElement);
+  }, 5);
+  function updateBackgroundColor(element) {
+    var heightPercentage = parseFloat(element.style.height);
+    var hue = (heightPercentage / 100) * 120; 
+    var saturation = 100;
+    var lightness = 50;
+    var opacity = 0.2 + (heightPercentage / 100) * 0.8;
+    var backgroundColor = "hsla(" + hue + ", " + saturation + "%, " + lightness + "%, " + opacity + ")";
+    element.style.backgroundColor = backgroundColor;
+  }
+});
+document.addEventListener("DOMContentLoaded", function () {
+  setInterval(function () {
+    var spanElement = document.getElementById("pwr_3_2");
+    var numericValue = parseFloat(spanElement.innerText);
+    var dynamicHeightElement = document.getElementById("statpanel3_2");
+    dynamicHeightElement.style.height = numericValue + "%";
+    updateBackgroundColor(dynamicHeightElement);
+  }, 5);
+  function updateBackgroundColor(element) {
+    var heightPercentage = parseFloat(element.style.height);
+    var hue = (heightPercentage / 100) * 120; 
+    var saturation = 100;
+    var lightness = 50;
+    var opacity = 0.2 + (heightPercentage / 100) * 0.8;
+    var backgroundColor = "hsla(" + hue + ", " + saturation + "%, " + lightness + "%, " + opacity + ")";
+    element.style.backgroundColor = backgroundColor;
+  }
+});
+document.addEventListener("DOMContentLoaded", function () {
+  setInterval(function () {
+    var spanElement = document.getElementById("pwr_4_1");
+    var numericValue = parseFloat(spanElement.innerText);
+    var dynamicHeightElement = document.getElementById("statpanel4_1");
+    dynamicHeightElement.style.height = numericValue + "%";
+    updateBackgroundColor(dynamicHeightElement);
+  }, 5);
+  function updateBackgroundColor(element) {
+    var heightPercentage = parseFloat(element.style.height);
+    var hue = (heightPercentage / 100) * 120; 
+    var saturation = 100;
+    var lightness = 50;
+    var opacity = 0.2 + (heightPercentage / 100) * 0.8;
+    var backgroundColor = "hsla(" + hue + ", " + saturation + "%, " + lightness + "%, " + opacity + ")";
+    element.style.backgroundColor = backgroundColor;
+  }
+});
+document.addEventListener("DOMContentLoaded", function () {
+  setInterval(function () {
+    var spanElement = document.getElementById("pwr_4_2");
+    var numericValue = parseFloat(spanElement.innerText);
+    var dynamicHeightElement = document.getElementById("statpanel4_2");
+    dynamicHeightElement.style.height = numericValue + "%";
+    updateBackgroundColor(dynamicHeightElement);
+  }, 5);
+  function updateBackgroundColor(element) {
+    var heightPercentage = parseFloat(element.style.height);
+    var hue = (heightPercentage / 100) * 120; 
+    var saturation = 100;
+    var lightness = 50;
+    var opacity = 0.2 + (heightPercentage / 100) * 0.8;
+    var backgroundColor = "hsla(" + hue + ", " + saturation + "%, " + lightness + "%, " + opacity + ")";
+    element.style.backgroundColor = backgroundColor;
+  }
+});
+document.addEventListener("DOMContentLoaded", function () {
+  setInterval(function () {
+    var spanElement = document.getElementById("pwr_5_1");
+    var numericValue = parseFloat(spanElement.innerText);
+    var dynamicHeightElement = document.getElementById("statpanel5_1");
+    dynamicHeightElement.style.height = numericValue + "%";
+    updateBackgroundColor(dynamicHeightElement);
+  }, 5);
+  function updateBackgroundColor(element) {
+    var heightPercentage = parseFloat(element.style.height);
+    var hue = (heightPercentage / 100) * 120; 
+    var saturation = 100;
+    var lightness = 50;
+    var opacity = 0.2 + (heightPercentage / 100) * 0.8;
+    var backgroundColor = "hsla(" + hue + ", " + saturation + "%, " + lightness + "%, " + opacity + ")";
+    element.style.backgroundColor = backgroundColor;
+  }
+});
+document.addEventListener("DOMContentLoaded", function () {
+  setInterval(function () {
+    var spanElement = document.getElementById("pwr_5_2");
+    var numericValue = parseFloat(spanElement.innerText);
+    var dynamicHeightElement = document.getElementById("statpanel5_2");
+    dynamicHeightElement.style.height = numericValue + "%";
+    updateBackgroundColor(dynamicHeightElement);
+  }, 5);
+  function updateBackgroundColor(element) {
+    var heightPercentage = parseFloat(element.style.height);
+    var hue = (heightPercentage / 100) * 120; 
+    var saturation = 100;
+    var lightness = 50;
+    var opacity = 0.2 + (heightPercentage / 100) * 0.8;
+    var backgroundColor = "hsla(" + hue + ", " + saturation + "%, " + lightness + "%, " + opacity + ")";
+    element.style.backgroundColor = backgroundColor;
+  }
+});
+document.addEventListener("DOMContentLoaded", function () {
+  setInterval(function () {
+    var spanElement = document.getElementById("pwr_6_1");
+    var numericValue = parseFloat(spanElement.innerText);
+    var dynamicHeightElement = document.getElementById("statpanel6_1");
+    dynamicHeightElement.style.height = numericValue + "%";
+    updateBackgroundColor(dynamicHeightElement);
+  }, 5);
+  function updateBackgroundColor(element) {
+    var heightPercentage = parseFloat(element.style.height);
+    var hue = (heightPercentage / 100) * 120; 
+    var saturation = 100;
+    var lightness = 50;
+    var opacity = 0.2 + (heightPercentage / 100) * 0.8;
+    var backgroundColor = "hsla(" + hue + ", " + saturation + "%, " + lightness + "%, " + opacity + ")";
+    element.style.backgroundColor = backgroundColor;
+  }
+});
+document.addEventListener("DOMContentLoaded", function () {
+  setInterval(function () {
+    var spanElement = document.getElementById("pwr_6_2");
+    var numericValue = parseFloat(spanElement.innerText);
+    var dynamicHeightElement = document.getElementById("statpanel6_2");
+    dynamicHeightElement.style.height = numericValue + "%";
+    updateBackgroundColor(dynamicHeightElement);
+  }, 5);
+  function updateBackgroundColor(element) {
+    var heightPercentage = parseFloat(element.style.height);
+    var hue = (heightPercentage / 100) * 120; 
+    var saturation = 100;
+    var lightness = 50;
+    var opacity = 0.2 + (heightPercentage / 100) * 0.8;
+    var backgroundColor = "hsla(" + hue + ", " + saturation + "%, " + lightness + "%, " + opacity + ")";
+    element.style.backgroundColor = backgroundColor;
+  }
+});
+
+
+
+
+document.addEventListener("DOMContentLoaded", function () {
+  setInterval(function () {
+    var spanElement = document.getElementById("pwr_1");
+    var numericValue = parseFloat(spanElement.innerText);
+    var dynamicHeightElement = document.getElementById("statWR_1");
+    dynamicHeightElement.style.height = numericValue + "%";
+    updateBackgroundColor(dynamicHeightElement);
+  }, 5);
+  function updateBackgroundColor(element) {
+    var heightPercentage = parseFloat(element.style.height);
+    var hue = (heightPercentage / 100) * 120; 
+    var saturation = 100;
+    var lightness = 50;
+    var opacity = 0.2 + (heightPercentage / 100) * 0.8;
+    var backgroundColor = "hsla(" + hue + ", " + saturation + "%, " + lightness + "%, " + opacity + ")";
+    element.style.backgroundColor = backgroundColor;
+  }
+});
+document.addEventListener("DOMContentLoaded", function () {
+  setInterval(function () {
+    var spanElement = document.getElementById("pwr_2");
+    var numericValue = parseFloat(spanElement.innerText);
+    var dynamicHeightElement = document.getElementById("statWR_2");
+    dynamicHeightElement.style.height = numericValue + "%";
+    updateBackgroundColor(dynamicHeightElement);
+  }, 5);
+  function updateBackgroundColor(element) {
+    var heightPercentage = parseFloat(element.style.height);
+    var hue = (heightPercentage / 100) * 120; 
+    var saturation = 100;
+    var lightness = 50;
+    var opacity = 0.2 + (heightPercentage / 100) * 0.8;
+    var backgroundColor = "hsla(" + hue + ", " + saturation + "%, " + lightness + "%, " + opacity + ")";
+    element.style.backgroundColor = backgroundColor;
+  }
+});
+document.addEventListener("DOMContentLoaded", function () {
+  setInterval(function () {
+    var spanElement = document.getElementById("pwr_3");
+    var numericValue = parseFloat(spanElement.innerText);
+    var dynamicHeightElement = document.getElementById("statWR_3");
+    dynamicHeightElement.style.height = numericValue + "%";
+    updateBackgroundColor(dynamicHeightElement);
+  }, 5);
+  function updateBackgroundColor(element) {
+    var heightPercentage = parseFloat(element.style.height);
+    var hue = (heightPercentage / 100) * 120; 
+    var saturation = 100;
+    var lightness = 50;
+    var opacity = 0.2 + (heightPercentage / 100) * 0.8;
+    var backgroundColor = "hsla(" + hue + ", " + saturation + "%, " + lightness + "%, " + opacity + ")";
+    element.style.backgroundColor = backgroundColor;
+  }
+});
+document.addEventListener("DOMContentLoaded", function () {
+  setInterval(function () {
+    var spanElement = document.getElementById("pwr_4");
+    var numericValue = parseFloat(spanElement.innerText);
+    var dynamicHeightElement = document.getElementById("statWR_4");
+    dynamicHeightElement.style.height = numericValue + "%";
+    updateBackgroundColor(dynamicHeightElement);
+  }, 5);
+  function updateBackgroundColor(element) {
+    var heightPercentage = parseFloat(element.style.height);
+    var hue = (heightPercentage / 100) * 120; 
+    var saturation = 100;
+    var lightness = 50;
+    var opacity = 0.2 + (heightPercentage / 100) * 0.8;
+    var backgroundColor = "hsla(" + hue + ", " + saturation + "%, " + lightness + "%, " + opacity + ")";
+    element.style.backgroundColor = backgroundColor;
+  }
+});
+document.addEventListener("DOMContentLoaded", function () {
+  setInterval(function () {
+    var spanElement = document.getElementById("pwr_5");
+    var numericValue = parseFloat(spanElement.innerText);
+    var dynamicHeightElement = document.getElementById("statWR_5");
+    dynamicHeightElement.style.height = numericValue + "%";
+    updateBackgroundColor(dynamicHeightElement);
+  }, 5);
+  function updateBackgroundColor(element) {
+    var heightPercentage = parseFloat(element.style.height);
+    var hue = (heightPercentage / 100) * 120; 
+    var saturation = 100;
+    var lightness = 50;
+    var opacity = 0.2 + (heightPercentage / 100) * 0.8;
+    var backgroundColor = "hsla(" + hue + ", " + saturation + "%, " + lightness + "%, " + opacity + ")";
+    element.style.backgroundColor = backgroundColor;
+  }
+});
+document.addEventListener("DOMContentLoaded", function () {
+  setInterval(function () {
+    var spanElement = document.getElementById("pwr_6");
+    var numericValue = parseFloat(spanElement.innerText);
+    var dynamicHeightElement = document.getElementById("statWR_6");
+    dynamicHeightElement.style.height = numericValue + "%";
+    updateBackgroundColor(dynamicHeightElement);
+  }, 5);
+  function updateBackgroundColor(element) {
+    var heightPercentage = parseFloat(element.style.height);
+    var hue = (heightPercentage / 100) * 120; 
+    var saturation = 100;
+    var lightness = 50;
+    var opacity = 0.2 + (heightPercentage / 100) * 0.8;
+    var backgroundColor = "hsla(" + hue + ", " + saturation + "%, " + lightness + "%, " + opacity + ")";
+    element.style.backgroundColor = backgroundColor;
+  }
+});
   </script>
 </body>
 </html>
