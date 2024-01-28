@@ -4,6 +4,7 @@
   <meta charset="utf-8">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/paho-mqtt/1.0.1/mqttws31.min.js" type="text/javascript"></script>
   <title>Solar View</title>
+  <link rel="icon" type="image/x-icon" href="/favicon.png">
 </head>
 <body>
   <h1>Total: Power = <span id="pwr_t"></span> W</h1>
@@ -12,7 +13,7 @@
   <h3>Panel 2: Power = <span id="pwr_1_2"></span> W</h3>
 
   <script type="text/javascript" language="javascript">
-    var client = new Paho.MQTT.Client("broker.emqx.io", 8084, "bhfcbdscvd")
+    var client = new Paho.MQTT.Client("test.mosquitto.org", 8081, "bhfcbdscvd")
 
     function onConnect() {
       console.log("connected")
