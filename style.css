@@ -1,0 +1,382 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Oswald:wght@300;400&family=Raleway&display=swap');
+.weather-container {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.weather {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.weather img {
+  width: 100px; /* Passe die Größe des Bildes an */
+  height: auto;
+}
+
+.weather p {
+  margin-left: 10px;
+  font-size: 18px;
+}
+body {
+  background-color: #212529;
+  margin: 0;
+  font-family: 'Nunito', sans-serif;
+}
+
+
+.header {
+  text-align: center;
+  background-color: #2B3035;
+  margin: 0;
+  padding: 15px;
+  color: white;
+  font-family: 'Nunito', sans-serif;
+}
+
+
+.container {
+  display: flex;
+  position: relative;
+}
+
+.panel {
+  position: relative;
+  text-align: center;
+  width: 20%;
+  margin: 15px; 
+}
+.panel img {
+  width: 100%; 
+  height: 100%; 
+}
+
+.conv {
+  position: relative;
+  text-align: center;
+  width: 20%;
+  margin: 15px; 
+}
+.conv img {
+  width: 100%; 
+  height: 100%; 
+}
+
+.text {
+  position: absolute;
+  top: 0; 
+  left: 50%; 
+  transform: translateX(-50%); 
+  top: 30%;
+  color: white;
+  padding: 10px;
+  width: 50%;
+}
+.text-conv {
+  position: absolute;
+  top: 0; 
+  left: 50%; 
+  transform: translateX(-50%); 
+  top: 30%;
+  color: rgb(0, 0, 0);
+  padding: 10px;
+  width: 50%;
+  
+}
+
+.statpanel1_1 {
+  position: absolute;
+  bottom: 0; 
+  left: 0; 
+  width: 99%;
+  transform: translateX(0.5%);
+  height: 0; 
+  max-height: 100%;
+  background-color:hsla(0, 0%, 0%, 0.438);
+  transition: height 0.5s ease, background-color 0.5s ease;
+}
+.statpanel1_2 {
+  position: absolute;
+  bottom: 0; 
+  left: 0; 
+  width: 99%;
+  transform: translateX(0.5%);
+  height: 0; 
+  max-height: 100%;
+  background-color:hsla(0, 0%, 0%, 0.438);
+  transition: height 0.5s ease, background-color 0.5s ease;
+}
+.statpanel2_1 {
+  position: absolute;
+  bottom: 0; 
+  left: 0; 
+  width: 99%;
+  transform: translateX(0.5%);
+  height: 0; 
+  max-height: 100%;
+  background-color:hsla(0, 0%, 0%, 0.438);
+  transition: height 0.5s ease, background-color 0.5s ease;
+}
+.statpanel2_2 {
+  position: absolute;
+  bottom: 0; 
+  left: 0; 
+  width: 99%;
+  transform: translateX(0.5%);
+  height: 0; 
+  max-height: 100%;
+  background-color:hsla(0, 0%, 0%, 0.438);
+  transition: height 0.5s ease, background-color 0.5s ease;
+}
+.statpanel3_1 {
+  position: absolute;
+  bottom: 0; 
+  left: 0; 
+  width: 99%;
+  transform: translateX(0.5%);
+  height: 0; 
+  max-height: 100%;
+  background-color:hsla(0, 0%, 0%, 0.438);
+  transition: height 0.5s ease, background-color 0.5s ease;
+}
+.statpanel3_2 {
+  position: absolute;
+  bottom: 0; 
+  left: 0; 
+  width: 99%;
+  transform: translateX(0.5%);
+  height: 0; 
+  max-height: 100%;
+  background-color:hsla(0, 0%, 0%, 0.438);
+  transition: height 0.5s ease, background-color 0.5s ease;
+}
+.statpanel4_1 {
+  position: absolute;
+  bottom: 0; 
+  left: 0; 
+  width: 99%;
+  transform: translateX(0.5%);
+  height: 0; 
+  max-height: 100%;
+  background-color:hsla(0, 0%, 0%, 0.438);
+  transition: height 0.5s ease, background-color 0.5s ease;
+}
+.statpanel4_2 {
+  position: absolute;
+  bottom: 0; 
+  left: 0; 
+  width: 99%;
+  transform: translateX(0.5%);
+  height: 0; 
+  max-height: 100%;
+  background-color:hsla(0, 0%, 0%, 0.438);
+  transition: height 0.5s ease, background-color 0.5s ease;
+}
+.statpanel5_1 {
+  position: absolute;
+  bottom: 0; 
+  left: 0; 
+  width: 99%;
+  transform: translateX(0.5%);
+  height: 0; 
+  max-height: 100%;
+  background-color:hsla(0, 0%, 0%, 0.438);
+  transition: height 0.5s ease, background-color 0.5s ease;
+}.statpanel5_2 {
+  position: absolute;
+  bottom: 0; 
+  left: 0; 
+  width: 99%;
+  transform: translateX(0.5%);
+  height: 0; 
+  max-height: 100%;
+  background-color:hsla(0, 0%, 0%, 0.438);
+  transition: height 0.5s ease, background-color 0.5s ease;
+}.statpanel6_1 {
+  position: absolute;
+  bottom: 0; 
+  left: 0; 
+  width: 99%;
+  transform: translateX(0.5%);
+  height: 0; 
+  max-height: 100%;
+  background-color:hsla(0, 0%, 0%, 0.438);
+  transition: height 0.5s ease, background-color 0.5s ease;
+}.statpanel6_2 {
+  position: absolute;
+  bottom: 0; 
+  left: 0; 
+  width: 99%;
+  transform: translateX(0.5%);
+  height: 0; 
+  max-height: 100%;
+  background-color:hsla(0, 0%, 0%, 0.438);
+  transition: height 0.5s ease, background-color 0.5s ease;
+}
+
+.statWR_1 {
+  position: absolute;
+  bottom: 0; 
+  left: 0; 
+  width: 100%;
+  height: 0; 
+  max-height: 100%;
+  background-color:hsla(0, 0%, 0%, 0.438);
+  transition: height 0.5s ease, background-color 0.5s ease;
+}
+.statWR_2 {
+  position: absolute;
+  bottom: 0; 
+  left: 0; 
+  width: 100%;
+  height: 0; 
+  max-height: 100%;
+  background-color:hsla(0, 0%, 0%, 0.438);
+  transition: height 0.5s ease, background-color 0.5s ease;
+}
+.statWR_3 {
+  position: absolute;
+  bottom: 0; 
+  left: 0; 
+  width: 100%;
+  height: 0; 
+  max-height: 100%;
+  background-color:hsla(0, 0%, 0%, 0.438);
+  transition: height 0.5s ease, background-color 0.5s ease;
+}
+.statWR_4 {
+  position: absolute;
+  bottom: 0; 
+  left: 0; 
+  width: 100%;
+  height: 0; 
+  max-height: 100%;
+  background-color:hsla(0, 0%, 0%, 0.438);
+  transition: height 0.5s ease, background-color 0.5s ease;
+}
+.statWR_5 {
+  position: absolute;
+  bottom: 0; 
+  left: 0; 
+  width: 100%;
+  height: 0; 
+  max-height: 100%;
+  background-color:hsla(0, 0%, 0%, 0.438);
+  transition: height 0.5s ease, background-color 0.5s ease;
+}
+.statWR_6 {
+  position: absolute;
+  bottom: 0; 
+  left: 0; 
+  width: 100%;
+  height: 0; 
+  max-height: 100%;
+  background-color:hsla(0, 0%, 0%, 0.438);
+  transition: height 0.5s ease, background-color 0.5s ease;
+}
+@media screen and (max-width: 1200px) {
+  .panel, .conv {
+    width: 18%;
+    margin: 10px;
+  }
+
+  .text, .text-conv {
+    font-size: 80%;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .panel, .conv {
+    width: 23%;
+    margin: 8px;
+  }
+
+  .text, .text-conv {
+    font-size: 70%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .panel, .conv {
+    width: 30%;
+    margin: 6px;
+  }
+
+  .text, .text-conv {
+    font-size: 60%;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .panel, .conv {
+    width: 48%;
+    margin: 4px;
+  }
+
+  .text, .text-conv {
+    font-size: 50%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .panel, .conv {
+    width: 95%;
+    margin: 2px;
+  }
+
+  .text, .text-conv {
+    font-size: 40%;
+  }
+}
+@media screen and (max-width: 1499px) {
+  .table-container {
+    flex-direction: column; 
+  }
+
+  table {
+    width: 100%; 
+  }
+}
+.table-container {
+  display: flex;
+  flex-wrap: wrap; 
+  justify-content: space-between;
+}
+table {
+  width: auto;
+  min-width: 48%;
+  border-collapse: collapse;
+  margin: 15px;
+  background-color: #fff;
+  border-radius: 12px;
+  overflow: hidden; 
+  border: 1px solid #000000;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 12px;
+  text-align: center;
+}
+
+th {
+  background-color: #4d4d4d; 
+  color: #fff; 
+}
+
+tr:nth-child(even) {
+  background-color: #f5f5f5; 
+}
+tr:hover {
+  background-color: #e7e7e7;
+}
+.footer {
+  background-color: #2B3035;
+  color: rgb(201, 201, 201);
+  text-align: center;
+  padding: 5px;
+  width: 100;
+}
