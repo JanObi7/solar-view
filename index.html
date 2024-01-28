@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/paho-mqtt/1.0.1/mqttws31.min.js" type="text/javascript"></script>
+  <title>MQTT Demo</title>
+</head>
+<body>
+  <h1>Total: Power = <span id="pwr_t"></span> W</h1>
+  <h2>WR 01: Power = <span id="pwr_1"></span> W</h2>
+  <h3>Panel 1: Power = <span id="pwr_1_1"></span> W</h3>
+  <h3>Panel 2: Power = <span id="pwr_1_2"></span> W</h3>
+
+  <script type="text/javascript" language="javascript">
+    var client = new Paho.MQTT.Client("broker.hivemq.com", 8000, "bhfcbdscvd")
+
+    function onConnect() {
+      console.log("connected")
+
+      client.subscribe("OpenDTU-A60F1C/#")  
+    }
+
+    function setText(id, value) {
+      const el = document.querySelector("#"+id)
+      el.innerHTML = value
+    }
+
+    function msgArrived(msg) {
+      var topic = msg.destinationName
+      var value = msg.payloadString
+
+      // console.log(topic,"=",value)
+
+      if (topic == "OpenDTU-A60F1C/ac/power") document.querySelector("#pwr_t").innerHTML = value
+      if (topic == "OpenDTU-A60F1C/114182939493/0/power") document.querySelector("#pwr_1").innerHTML = value
+      if (topic == "OpenDTU-A60F1C/114182939493/1/power") document.querySelector("#pwr_1_1").innerHTML = value
+      if (topic == "OpenDTU-A60F1C/114182939493/2/power") document.querySelector("#pwr_1_2").innerHTML = value
+    }
+
+    client.onMessageArrived = msgArrived
+
+    client.connect({
+      timeout: 3,
+      onSuccess: onConnect
+    })
+  </script>
+</body>
+</html>
