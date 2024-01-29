@@ -3,15 +3,21 @@
 <head>
   <meta charset="utf-8">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/paho-mqtt/1.0.1/mqttws31.min.js" type="text/javascript"></script>
+  <script src="lib/moment/moment-with-locales.min.js"></script>
   <link rel="stylesheet" href="style.css">
   <link rel="icon" type="image/x-icon" href="favicon.png">
   <title>Solar View</title>
+
 </head>
 <body>
 
 
 
-<h1 class="header">Total Power = <span id="pwr_t"></span> W</h1>
+<h1 class="header">
+  Total Power = <span id="pwr_t"></span> W
+</h1>
+
+<div class="lastupdated">Letzter Datenempfang <hi id="current-time"></hi></div>
 
 <div class="container">
   <div class="panel">
@@ -263,7 +269,11 @@
 </div>
 
   <script type="text/javascript" language="javascript">
-  
+
+  moment.locale("de");
+
+  var updateTime = null;
+
   var client = new Paho.MQTT.Client("test.mosquitto.org", 8081, "bhfcbdscvd")
   
     function onConnect() {
@@ -277,11 +287,16 @@
       el.innerHTML = value
     }
 
+    setInterval(() => {
+      setText('current-time', updateTime ? updateTime.fromNow() : "---")
+    }, 1000);
+
     
 
     function msgArrived(msg) {
       var topic = msg.destinationName;
       var value = parseFloat(msg.payloadString);
+      
       
       if (topic == "OpenDTU-A60F1C/ac/power") document.querySelector("#pwr_t").innerHTML = value
       if (topic == "OpenDTU-A60F1C/114182939493/0/power") {updatePercentageWR("pwr_1", value);}
@@ -409,6 +424,12 @@
       if (topic == "OpenDTU-A60F1C/114182939157/0/temperature") document.querySelectorAll("#temtab_6").forEach(elem => {elem.innerHTML=value})
       if (topic == "OpenDTU-A60F1C/114182939157/1/temperature") document.querySelectorAll("#temtab_6_1").forEach(elem => {elem.innerHTML=value})
       if (topic == "OpenDTU-A60F1C/114182939157/2/temperature") document.querySelectorAll("#temtab_6_2").forEach(elem => {elem.innerHTML=value})
+
+      if (topic == "OpenDTU-A60F1C/114182937394/status/last_update") {
+        console.log(topic,value)
+        const date = new Date(parseInt(value) * 1000)      
+        updateTime = moment(date);
+      }
     }
     
 
