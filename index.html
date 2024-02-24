@@ -5,20 +5,17 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/paho-mqtt/1.0.1/mqttws31.min.js" type="text/javascript"></script>
   <script src="lib/moment/moment-with-locales.min.js"></script>
   <link rel="stylesheet" href="style.css">
-  <link rel="icon" type="image/x-icon" href="icon.png">
+  <link rel="icon" type="image/x-icon" href="favicon.png">
   <title>Solar View</title>
 
 </head>
 <body>
 
-
-
-  <h1 class="header">
-    Gesamtleistung: <span id="pwr_t"></span> W
-  </h1>
-  
+<form id="background">
+<header>
+  <h1 class="header-title">Gesamtleistung: <span id="pwr_t"></span> W</h1>
   <div class="lastupdated">Letzter Datenempfang <hi id="current-time"></hi></div>
-
+</header>
 
 <div class="container">
   <div class="panel">
@@ -264,7 +261,7 @@
   </tbody>
 </table> 
 </div>
-
+</form>
 <div class="footer">
   <p>Website von Robert Obermüller</p>
 </div>
