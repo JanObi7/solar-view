@@ -1,12 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Oswald:wght@300;400&family=Raleway&display=swap');
+
+/* Allgemeine Stildefinitionen */
 body {
-  background-color: #2B3035;
-  margin: 0;
-  font-family: 'Nunito', sans-serif;
-}
-#background{
   background-color: #8f8f8f;
   margin: 0;
+  font-family: 'Nunito', sans-serif;
 }
 
 .container {
@@ -14,252 +12,81 @@ body {
   position: relative;
 }
 
-.panel {
-  position: relative;
-  text-align: center;
-  width: 20%;
-  margin: 15px; 
-  -webkit-box-shadow: 0px 0px 16px -1px rgba(61,61,61,1);
-  -moz-box-shadow: 0px 0px 16px -1px rgba(61,61,61,1);
-  box-shadow: 0px 0px 16px -1px rgba(61,61,61,1);
-
-}
-.panel img {
-  width: 100%; 
-  height: 100%; 
-}
-
-.conv {
-  position: relative;
-  text-align: center;
-  width: 20%;
-  margin: 15px; 
-  -webkit-box-shadow: 0px 0px 16px -1px rgba(61,61,61,1);
-  -moz-box-shadow: 0px 0px 16px -1px rgba(61,61,61,1);
-  box-shadow: 0px 0px 16px -1px rgba(61,61,61,1);
-}
-.conv img {
-  width: 100%; 
-  height: 100%; 
-}
-
-.text {
-  position: absolute;
-  top: 0; 
-  left: 50%; 
-  transform: translateX(-50%); 
-  top: 30%;
+/* Header-Stile */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #2B3035;
   color: white;
-  padding: 10px;
-  width: 50%;
+  padding: 15px;
+  font-family: 'Nunito', sans-serif;
+  margin: 0;
+  -webkit-box-shadow: 1px 7px 34px 8px rgba(0,0,0,0.43);
+  -moz-box-shadow: 1px 7px 34px 8px rgba(0,0,0,0.43);
+  box-shadow: 1px 7px 34px 8px rgba(0,0,0,0.43);
 }
-.text-conv {
+
+.header-title {
+  font-size: 24px;
+  margin: 0 auto;
+}
+
+.lastupdated {
   position: absolute;
-  top: 0; 
-  left: 50%; 
-  transform: translateX(-50%); 
+  right: 20px;
+  font-size: 18px;
+  color: white;
+}
+
+/* Panel-Stile */
+.panel, .conv {
+  position: relative;
+  text-align: center;
+  width: 20%;
+  margin: 15px;
+  -webkit-drop-shadow: 0px 0px 16px -1px rgba(61,61,61,1);
+  -moz-drop-shadow: 0px 0px 16px -1px rgba(61,61,61,1);
+  box-shadow: 0px 0px 16px -1px rgba(61,61,61,1);
+}
+
+.panel img, .conv img {
+  width: 100%;
+  height: 100%;
+}
+
+.text, .text-conv {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
   top: 30%;
-  color: rgb(0, 0, 0);
   padding: 10px;
   width: 50%;
-  
+  color: white;
 }
 
-.statpanel1_1 {
-  position: absolute;
-  bottom: 0; 
-  left: 0; 
-  width: 99%;
-  transform: translateX(0.5%);
-  height: 0; 
-  max-height: 100%;
-  background-color:hsla(0, 0%, 0%, 0.438);
-  transition: height 0.5s ease, background-color 0.5s ease;
+.text-conv {
+  color: rgb(0, 0, 0);
 }
-.statpanel1_2 {
+
+.statpanel, .statWR{
   position: absolute;
   bottom: 0; 
   left: 0; 
-  width: 99%;
-  transform: translateX(0.5%);
-  height: 0; 
-  max-height: 100%;
-  background-color:hsla(0, 0%, 0%, 0.438);
-  transition: height 0.5s ease, background-color 0.5s ease;
-}
-.statpanel2_1 {
-  position: absolute;
-  bottom: 0; 
-  left: 0; 
-  width: 99%;
-  transform: translateX(0.5%);
-  height: 0; 
-  max-height: 100%;
-  background-color:hsla(0, 0%, 0%, 0.438);
-  transition: height 0.5s ease, background-color 0.5s ease;
-}
-.statpanel2_2 {
-  position: absolute;
-  bottom: 0; 
-  left: 0; 
-  width: 99%;
-  transform: translateX(0.5%);
-  height: 0; 
-  max-height: 100%;
-  background-color:hsla(0, 0%, 0%, 0.438);
-  transition: height 0.5s ease, background-color 0.5s ease;
-}
-.statpanel3_1 {
-  position: absolute;
-  bottom: 0; 
-  left: 0; 
-  width: 99%;
-  transform: translateX(0.5%);
-  height: 0; 
-  max-height: 100%;
-  background-color:hsla(0, 0%, 0%, 0.438);
-  transition: height 0.5s ease, background-color 0.5s ease;
-}
-.statpanel3_2 {
-  position: absolute;
-  bottom: 0; 
-  left: 0; 
-  width: 99%;
-  transform: translateX(0.5%);
-  height: 0; 
-  max-height: 100%;
-  background-color:hsla(0, 0%, 0%, 0.438);
-  transition: height 0.5s ease, background-color 0.5s ease;
-}
-.statpanel4_1 {
-  position: absolute;
-  bottom: 0; 
-  left: 0; 
-  width: 99%;
-  transform: translateX(0.5%);
-  height: 0; 
-  max-height: 100%;
-  background-color:hsla(0, 0%, 0%, 0.438);
-  transition: height 0.5s ease, background-color 0.5s ease;
-}
-.statpanel4_2 {
-  position: absolute;
-  bottom: 0; 
-  left: 0; 
-  width: 99%;
-  transform: translateX(0.5%);
-  height: 0; 
-  max-height: 100%;
-  background-color:hsla(0, 0%, 0%, 0.438);
-  transition: height 0.5s ease, background-color 0.5s ease;
-}
-.statpanel5_1 {
-  position: absolute;
-  bottom: 0; 
-  left: 0; 
-  width: 99%;
-  transform: translateX(0.5%);
-  height: 0; 
-  max-height: 100%;
-  background-color:hsla(0, 0%, 0%, 0.438);
-  transition: height 0.5s ease, background-color 0.5s ease;
-}.statpanel5_2 {
-  position: absolute;
-  bottom: 0; 
-  left: 0; 
-  width: 99%;
-  transform: translateX(0.5%);
-  height: 0; 
-  max-height: 100%;
-  background-color:hsla(0, 0%, 0%, 0.438);
-  transition: height 0.5s ease, background-color 0.5s ease;
-}.statpanel6_1 {
-  position: absolute;
-  bottom: 0; 
-  left: 0; 
-  width: 99%;
-  transform: translateX(0.5%);
-  height: 0; 
-  max-height: 100%;
-  background-color:hsla(0, 0%, 0%, 0.438);
-  transition: height 0.5s ease, background-color 0.5s ease;
-}.statpanel6_2 {
-  position: absolute;
-  bottom: 0; 
-  left: 0; 
-  width: 99%;
-  transform: translateX(0.5%);
+  width: 100%;
   height: 0; 
   max-height: 100%;
   background-color:hsla(0, 0%, 0%, 0.438);
   transition: height 0.5s ease, background-color 0.5s ease;
 }
 
-.statWR_1 {
-  position: absolute;
-  bottom: 0; 
-  left: 0; 
-  width: 100%;
-  height: 0; 
-  max-height: 100%;
-  background-color:hsla(0, 0%, 0%, 0.438);
-  transition: height 0.5s ease, background-color 0.5s ease;
-}
-.statWR_2 {
-  position: absolute;
-  bottom: 0; 
-  left: 0; 
-  width: 100%;
-  height: 0; 
-  max-height: 100%;
-  background-color:hsla(0, 0%, 0%, 0.438);
-  transition: height 0.5s ease, background-color 0.5s ease;
-}
-.statWR_3 {
-  position: absolute;
-  bottom: 0; 
-  left: 0; 
-  width: 100%;
-  height: 0; 
-  max-height: 100%;
-  background-color:hsla(0, 0%, 0%, 0.438);
-  transition: height 0.5s ease, background-color 0.5s ease;
-}
-.statWR_4 {
-  position: absolute;
-  bottom: 0; 
-  left: 0; 
-  width: 100%;
-  height: 0; 
-  max-height: 100%;
-  background-color:hsla(0, 0%, 0%, 0.438);
-  transition: height 0.5s ease, background-color 0.5s ease;
-}
-.statWR_5 {
-  position: absolute;
-  bottom: 0; 
-  left: 0; 
-  width: 100%;
-  height: 0; 
-  max-height: 100%;
-  background-color:hsla(0, 0%, 0%, 0.438);
-  transition: height 0.5s ease, background-color 0.5s ease;
-}
-.statWR_6 {
-  position: absolute;
-  bottom: 0; 
-  left: 0; 
-  width: 100%;
-  height: 0; 
-  max-height: 100%;
-  background-color:hsla(0, 0%, 0%, 0.438);
-  transition: height 0.5s ease, background-color 0.5s ease;
-}
+/* Tabellen-Stile */
 .table-container {
   display: flex;
-  flex-wrap: wrap; 
+  flex-wrap: wrap;
   justify-content: space-between;
 }
+
 table {
   width: auto;
   min-width: 48%;
@@ -267,7 +94,7 @@ table {
   margin: 15px;
   background-color: #fff;
   border-radius: 12px;
-  overflow: hidden; 
+  overflow: hidden;
   border: 1px solid #000000;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
@@ -279,16 +106,15 @@ th, td {
 }
 
 th {
-  background-color: #4d4d4d; 
-  color: #fff; 
+  background-color: #4d4d4d;
+  color: #fff;
 }
 
 tr:nth-child(even) {
-  background-color: #f5f5f5; 
+  background-color: #f5f5f5;
 }
-tr:hover {
-  background-color: #e7e7e7;
-}
+
+/* Footer-Stile */
 .footer {
   background-color: #2B3035;
   color: rgb(201, 201, 201);
@@ -300,7 +126,7 @@ tr:hover {
   box-shadow: 1px -4px 34px 8px rgba(0,0,0,0.43);
 }
 
-
+/* Media Queries */
 @media all and (max-width: 1499px) {
   table {
     width: 100%;
@@ -345,6 +171,7 @@ tr:hover {
   .text, .text-conv {
     font-size: 60%;
   }
+
   .lastupdated {
     font-size: 70%;
   }
@@ -369,7 +196,7 @@ tr:hover {
   .panel, .conv {
     width: 95%;
     margin: 2px;
-    font-size: 155px; /* Hier wird die Schriftgröße auf 155% gesetzt */
+    font-size: 155px;
   }
 
   .lastupdated {
@@ -383,29 +210,4 @@ tr:hover {
   .header-text {
     font-size: 14px;
   }
-}
-
-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #2B3035;
-  margin: 0;
-  padding: 15px;
-  color: white;
-  font-family: 'Nunito', sans-serif;
-  -webkit-box-shadow: 1px 7px 34px 8px rgba(0,0,0,0.43);
-  -moz-box-shadow: 1px 7px 34px 8px rgba(0,0,0,0.43);
-  box-shadow: 1px 7px 34px 8px rgba(0,0,0,0.43);
-}
-
-.header-title {
-  font-size: 24px;
-  margin: 0 auto;
-}
-.lastupdated {
-  color: white;
-  position: absolute;
-  right: 20px;
-  font-size: 18px;
 }
