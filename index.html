@@ -125,6 +125,7 @@
 </div>
 
 <script type="text/javascript" language="javascript">
+var updateTimer;
 
 var data = {
   date: null,
@@ -168,7 +169,13 @@ function setText(id, value) {
 
 updateView();
 setInterval(() => {
-  updateView();
+  if (data.date) {
+    const date = new Date(parseInt(data.date) * 1000);      
+    var updateTime = moment(date);
+    setText('current-time',  updateTime.fromNow());
+  } else {
+    setText('current-time',  "---");
+  }
 }, 1000);
 
 function msgArrived(msg) {
@@ -193,18 +200,14 @@ function msgArrived(msg) {
     if (topic == "OpenDTU-A60F1C/"+ids[i-1]+"/2/voltage") data[wr].panel2.voltage = value;
     if (topic == "OpenDTU-A60F1C/"+ids[i-1]+"/2/current") data[wr].panel2.current = value;
   }
+
+  // retrigger update timer
+  clearTimeout(updateTimer)
+  updateTimer = setTimeout(updateView, 1000);
 }
 
 function updateView() {
   // Titelzeile
-  if (data.date) {
-    const date = new Date(parseInt(data.date) * 1000);      
-    var updateTime = moment(date);
-    setText('current-time',  updateTime.fromNow());
-  } else {
-    setText('current-time',  "---");
-  }
-  
   document.querySelector("#pwr_t").innerHTML = data.total;
 
   // grafische Darstellung
