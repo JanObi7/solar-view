@@ -193,12 +193,12 @@ function msgArrived(msg) {
     if (topic == "OpenDTU-A60F1C/"+ids[i-1]+"/0/current") data[wr].current = value;
     if (topic == "OpenDTU-A60F1C/"+ids[i-1]+"/0/powerdc") data[wr].powerdc = value;
     if (topic == "OpenDTU-A60F1C/"+ids[i-1]+"/0/temperature") data[wr].temp = value;
-    if (topic == "OpenDTU-A60F1C/"+ids[i-1]+"/1/power") data[wr].panel1.power = value;
-    if (topic == "OpenDTU-A60F1C/"+ids[i-1]+"/1/voltage") data[wr].panel1.voltage = value;
-    if (topic == "OpenDTU-A60F1C/"+ids[i-1]+"/1/current") data[wr].panel1.current = value;
-    if (topic == "OpenDTU-A60F1C/"+ids[i-1]+"/2/power") data[wr].panel2.power = value;
-    if (topic == "OpenDTU-A60F1C/"+ids[i-1]+"/2/voltage") data[wr].panel2.voltage = value;
-    if (topic == "OpenDTU-A60F1C/"+ids[i-1]+"/2/current") data[wr].panel2.current = value;
+    if (topic == "OpenDTU-A60F1C/"+ids[i-1]+"/2/power") data[wr].panel1.power = value;
+    if (topic == "OpenDTU-A60F1C/"+ids[i-1]+"/2/voltage") data[wr].panel1.voltage = value;
+    if (topic == "OpenDTU-A60F1C/"+ids[i-1]+"/2/current") data[wr].panel1.current = value;
+    if (topic == "OpenDTU-A60F1C/"+ids[i-1]+"/1/power") data[wr].panel2.power = value;
+    if (topic == "OpenDTU-A60F1C/"+ids[i-1]+"/1/voltage") data[wr].panel2.voltage = value;
+    if (topic == "OpenDTU-A60F1C/"+ids[i-1]+"/1/current") data[wr].panel2.current = value;
   }
 
   // retrigger update timer
