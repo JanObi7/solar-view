@@ -208,7 +208,14 @@ function msgArrived(msg) {
 
 function updateView() {
   // Titelzeile
-  document.querySelector("#pwr_t").innerHTML = data.total;
+  document.querySelector("#pwr_t").innerHTML = (
+    data.wr1.power + 
+    data.wr2.power + 
+    data.wr3.power + 
+    data.wr4.power + 
+    data.wr5.power + 
+    data.wr5.power
+).toFixed(1);
 
   // grafische Darstellung
   for (var i=1; i<=6; i++) {
