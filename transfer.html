@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/paho-mqtt/1.0.1/mqttws31.min.js" type="text/javascript"></script>
+  <script src="lib/moment/moment-with-locales.min.js"></script>
+  <link rel="icon" type="image/x-icon" href="favicon.png">
+  <title>Solar Data Transfer</title>
+
+</head>
+<body>
+<div>
+  <p>Transferer von Robert Obermüller</p>
+</div>
+
+<script type="module">
+  var data = {};
+
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-app.js";
+  import { getFirestore, addDoc, collection, onSnapshot, doc, updateDoc, deleteDoc } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-firestore.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  const firebaseConfig = {
+    apiKey: "AIzaSyAT9EGuERRz7zODKewgM8UI_mU6XbbgjDw",
+    authDomain: "solar-store-7f226.firebaseapp.com",
+    projectId: "solar-store-7f226",
+    storageBucket: "solar-store-7f226.appspot.com",
+    messagingSenderId: "384383912881",
+    appId: "1:384383912881:web:4c01ede933c7a68bac0b90"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+
+  const db = getFirestore(app);
+  const ref = doc(db, "OpenDTU", "A60F1C")
+
+  function onUpdate() {
+    console.log(data)
+    updateDoc(ref, data)
+  }
+
+  // MQTT connection
+  var updateTimer;
+
+  var client = new Paho.MQTT.Client("test.mosquitto.org", 8081, "bhfcbdscvd")
+  
+  function onConnect() {
+    console.log("connected")
+    client.subscribe("OpenDTU-A60F1C/#")  
+  }
+
+  function msgArrived(msg) {
+    var topic = msg.destinationName.replaceAll("OpenDTU-A60F1C/", "").replaceAll("/", "_");
+    var value = parseFloat(msg.payloadString);
+
+    console.log(topic, value)
+    data[topic] = value
+
+    clearTimeout(updateTimer)
+    updateTimer = setTimeout(onUpdate, 1000);
+  }
+
+  client.onMessageArrived = msgArrived
+
+  client.connect({
+    timeout: 3,
+    onSuccess: onConnect,
+    useSSL: true,
+  })
+</script>
+</body>
+</html>
